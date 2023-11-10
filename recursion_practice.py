@@ -28,6 +28,9 @@ def fibonacci(n):
     elif n == 1:
         return 1
     #recursive case: the fibonacci number is the sum of the previous 2
+    else:
+        return fibonacci(n+1)+fibonacci(n-1)
+
 
 #triangular numbers
 def triangular(n):
