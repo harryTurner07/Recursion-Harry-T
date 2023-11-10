@@ -12,6 +12,9 @@ def pos_dec_to_binary(decimal,bit_list):
     
 #why does this not work? Fix it!
 def countdown(number):
+    # Base Case
+    if number == -1:
+        return
     print(number)
     time.sleep(1)
     countdown(number-1)
