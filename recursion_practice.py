@@ -10,26 +10,33 @@ def pos_dec_to_binary(decimal,bit_list):
         bit_list.append(decimal%2)
         return pos_dec_to_binary(decimal//2,bit_list)
     
-#why does this not work? Fix it!
+#why does this not work? Fix it! - ok don't shout :(
 def countdown(number):
     # Base Case
     if number == -1:
         return
     print(number)
     time.sleep(1)
+    # Recursive case
     countdown(number-1)
 
 
-#try to complete this
-def fibonacci(n):
-    #base case
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    #recursive case: the fibonacci number is the sum of the previous 2
-    else:
-        return fibonacci(n+1)+fibonacci(n-1)
+#try to complete this - I've changed it quite a bit but it still functions as should
+def fibonacci(n):  # Actual sequence
+  if n <= 1:  # Base case
+    return n
+  else:  # Recursive case
+    return (fibonacci(n - 1) + fibonacci(n - 2))
+
+
+def full_seq():  # Used as a safe holder so the sequence doesn't count continuously
+  nterms = int(input("Enter the number of terms: "))
+  if nterms <= 0:
+    print("There can only be positive integers. ")
+  else:
+    print("Fibonacci sequence: ")
+    for i in range(nterms):
+      print(fibonacci(i))
 
 
 #triangular numbers
@@ -86,6 +93,6 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 ##or, neater (using a generator expression (outside scope of A-level CS))
 #print("".join(str(i) for i in pos_dec_to_binary(1234,[])))
 #
-#print (factorial(4))
+#print (full_seq())
 #countdown(10)
 #print(binary_search_recursive([1,2,3,4,54,56,58],0,6,1))
