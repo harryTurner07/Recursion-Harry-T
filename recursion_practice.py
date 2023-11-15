@@ -45,12 +45,20 @@ def triangular(n):
     #recursive case
     pass
 
-#try to complete this
-def factorial(input_number):
-    #base case
-    
-    #recursive case
-    pass
+#try to complete this - ok - done
+def factorial(number):
+    # Base Case
+    if number < 0:
+        return "Numbers below 0 cannot be in a factorial" # checks if a number is 0 or negative
+    else:
+        if not str(number).isdigit():
+            return "Numbers given must be whole" # checks if number is a decimal
+        else:
+            if (number == 1) or (number == 0):
+                return 1
+            # Recurssive Case
+            else:
+                return number * factorial(number - 1)
 
 def is_palendromic(string):
     pass
@@ -92,7 +100,7 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #print(pos_dec_to_binary(1234,[]))
 ##or, neater (using a generator expression (outside scope of A-level CS))
 #print("".join(str(i) for i in pos_dec_to_binary(1234,[])))
-#
+#print (factorial(5))
 #print (full_seq())
 #countdown(10)
 #print(binary_search_recursive([1,2,3,4,54,56,58],0,6,1))
