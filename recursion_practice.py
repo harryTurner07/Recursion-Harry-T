@@ -74,20 +74,11 @@ def linear_search_recursive(items, start_index, end_index, search_item):
 def binary_search_recursive(items, start_index, end_index, search_item):
   """ a recursive binary search, returning the index of the item, or -1 if not in list. 
   The start index should be 0 and the end index should be 1 less than the length of the list."""
-  # base case 1: item not in list
-  # TODO use start_index and end_index to find out if the sublist is of size 0 or less and return appropriate int
-  #if ______:
-  #  return _____
-  # TODO work out middle index of the sublist
-  # middle_index = 
-  # TODO from that, set current item
-  #current_item = 
-  # TODO base case 2: find out if current item is the search item and return the appropriate index
-  # recursive cases: do a BS on a subset of the list by tweaking appropriate start or end index
-  #if current_item < search_item:
-  #  return binary_search_recursive(items, ????????????, ????????????, search_item)
-  #else:
-  #  return binary_search_recursive(items, ????????????, ????????????, search_item)
+  length = len(items)
+  middle_index = items[length/2]
+  if middle_index < search_item:
+     for i in items:
+        pass
   pass
 
 """EXTENSION: Euclid's algorithm. The greatest common divisor (gcd) of two positive integers is the largest integer
