@@ -61,7 +61,15 @@ def factorial(number):
                 return number * factorial(number - 1)
 
 def is_palendromic(string):
-    pass
+    """
+    A recursive palendrome subroutine; it checks if the word is the same when reversed
+    """
+    if len(string) < 2:
+       return True
+    if string[0] != string[-1]:
+       return False
+    else:
+       return is_palendromic(string[1:-1])
 
 #try to complete a recursive linear search, returning the index of the item, or -1
 def linear_search_recursive(items, start_index, end_index, search_item):
@@ -91,6 +99,7 @@ def binary_search_recursive(items,start_index, end_index, search_item): # RE-use
     current_item = items[middle_index]
     if current_item == search_item:
         return middle_index
+    # Recursive cases
     elif current_item < search_item:
         return binary_search_recursive(items, middle_index + 1, end_index, search_item)
     else:
@@ -111,3 +120,4 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #print (full_seq())
 #countdown(10)
 #print(linear_search_recursive([1,2,3,4,54,56,58],0,6,1))
+print(is_palendromic("racecar"))
