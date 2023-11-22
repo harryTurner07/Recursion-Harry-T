@@ -12,6 +12,9 @@ def pos_dec_to_binary(decimal,bit_list):
     
 #why does this not work? Fix it! - ok don't shout :(
 def countdown(number):
+    """
+    A countdown recursive subroutine that countdowns from the number given and stops when reaches -1 (the last number is not outputed)
+    """
     # Base Case
     if number == -1:
         return
@@ -23,6 +26,9 @@ def countdown(number):
 
 #try to complete this - I've changed it quite a bit but it still functions as should
 def fibonacci(n):  # Actual sequence
+  """
+  The fibonacci sequence - I put it into 2 different subroutines, one that counts the number of terms and one that actually performs the fibonacci sequence
+  """
   if n <= 1:  # Base case
     return n
   else:  # Recursive case
@@ -41,12 +47,21 @@ def full_seq():  # Used as a safe holder so the sequence doesn't count continuou
 
 #triangular numbers
 def triangular(n):
+    """
+    A triangular recursion subroutine that returns the nth triangular number
+    """
     #base case
+    if n == 1:
+       return 1
     #recursive case
-    pass
+    else:
+       return (n + triangular(n - 1))
 
 #try to complete this - ok - done
 def factorial(number):
+    """
+    A subroutine that calculates the factorial of the number given using a recursive loop
+    """
     # Base Case
     if number < 0:
         return "Numbers below 0 cannot be in a factorial" # checks if a number is 0 or negative
@@ -64,10 +79,12 @@ def is_palendromic(string):
     """
     A recursive palendrome subroutine; it checks if the word is the same when reversed
     """
+    # Base cases
     if len(string) < 2:
        return True
     if string[0] != string[-1]:
        return False
+    # Recursive case
     else:
        return is_palendromic(string[1:-1])
 
@@ -119,5 +136,6 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #print (factorial(5))
 #print (full_seq())
 #countdown(10)
+#print(triangular(4))
 #print(linear_search_recursive([1,2,3,4,54,56,58],0,6,1))
-print(is_palendromic("racecar"))
+#print(is_palendromic("racecar"))
