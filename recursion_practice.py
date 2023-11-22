@@ -65,21 +65,37 @@ def is_palendromic(string):
 
 #try to complete a recursive linear search, returning the index of the item, or -1
 def linear_search_recursive(items, start_index, end_index, search_item):
+    """
+    A Linear search using recursion to go through the list, if the selected item is the search item - output the index of the item
+    """
     #base cases
+    if start_index > end_index:
+       return -1
     #recursive case:
+    if search_item == items[start_index]:
+       return start_index
+    else:
+       return linear_search_recursive(items, start_index + 1, end_index, search_item)
 
-    pass
 
 
-def binary_search_recursive(items, start_index, end_index, search_item):
-  """ a recursive binary search, returning the index of the item, or -1 if not in list. 
-  The start index should be 0 and the end index should be 1 less than the length of the list."""
-  length = len(items)
-  middle_index = items[length/2]
-  if middle_index < search_item:
-     for i in items:
-        pass
-  pass
+def binary_search_recursive(items,start_index, end_index, search_item): # RE-used code :) - should still work :?
+    """
+    A Binary search using recursion, returning the index of the item in the list or -1 if not in the list.
+    The start index should be 0 and the end index should be 1 less than the length of the list.
+    """
+    # Base cases for if the item isn't in the list or if the item has been found
+    if start_index > end_index:
+        return -1
+    middle_index = (start_index + end_index) // 2
+    current_item = items[middle_index]
+    if current_item == search_item:
+        return middle_index
+    elif current_item < search_item:
+        return binary_search_recursive(items, middle_index + 1, end_index, search_item)
+    else:
+        return binary_search_recursive(items, start_index, middle_index - 1, search_item);
+
 
 """EXTENSION: Euclid's algorithm. The greatest common divisor (gcd) of two positive integers is the largest integer
 that divides evenly into both of them. For example, the gcd(102, 68) = 34.
@@ -94,4 +110,4 @@ If p > q, the gcd of p and q is the same as the gcd of q and p % q."""
 #print (factorial(5))
 #print (full_seq())
 #countdown(10)
-#print(binary_search_recursive([1,2,3,4,54,56,58],0,6,1))
+#print(linear_search_recursive([1,2,3,4,54,56,58],0,6,1))
